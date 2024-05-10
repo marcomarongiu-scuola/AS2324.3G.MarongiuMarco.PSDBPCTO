@@ -46,7 +46,7 @@ namespace AS2324._3G.MarongiuMarco.PSDBPCTO
             strConnessione = "Data Source=" + @"C:\Users\coent\OneDrive\Documenti\compiti informatica\windows form\AS2324.3G.MarongiuMarco.PSDBPCTO\AS2324.3G.MarongiuMarco.PSDBPCTO\DB\MotoGP.db" + ";Version=3;";
             DataTable dtDati = new DataTable();
 
-            query = "SELECT * FROM Gare WHERE Punteggio >=1 AND Punteggio<=3 ORDER by Circuiti, Punteggio";
+            query = "SELECT * FROM Gare WHERE Punteggio >=1 AND Punteggio<=3 ORDER by IdCircuiti, Punteggio";
 
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(query, strConnessione);
@@ -82,9 +82,14 @@ namespace AS2324._3G.MarongiuMarco.PSDBPCTO
                     query = "SELECT * FROM Squadre WHERE nazionalita <> 'ITA' ORDER by nome";
                     break;
                 case "Elenco piloti Ducati ordinati per cognome e nome":
-                    query = "SELECT * FROM Piloti WHERE Squadre = 'Ducati' ORDER by cognome, nome";
+                    query = "SELECT * FROM Piloti WHERE IdSquadre = 'Ducati' ORDER by cognome, nome";
                     break;
-                
+                case "Elenco circuiti ordinati per nome":
+                    query = "SELECT * FROM Circuiti  ORDER by  nome";
+                    break;
+                default:
+                    MessageBox.Show("Inserire un campo valido");
+                    break;
             }
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(query, strConnessione);
