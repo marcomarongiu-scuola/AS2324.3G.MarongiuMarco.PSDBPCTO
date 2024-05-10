@@ -31,17 +31,19 @@
             dgvDB = new DataGridView();
             btnPiloti = new Button();
             btnGare = new Button();
+            cmbScelta = new ComboBox();
+            btnStart = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDB).BeginInit();
             SuspendLayout();
             // 
             // dgvDB
             // 
             dgvDB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDB.Location = new Point(-1, 251);
+            dgvDB.Location = new Point(-1, 199);
             dgvDB.Name = "dgvDB";
             dgvDB.RowHeadersWidth = 45;
             dgvDB.RowTemplate.Height = 27;
-            dgvDB.Size = new Size(807, 208);
+            dgvDB.Size = new Size(807, 260);
             dgvDB.TabIndex = 0;
             // 
             // btnPiloti
@@ -64,11 +66,32 @@
             btnGare.UseVisualStyleBackColor = true;
             btnGare.Click += btnGare_Click;
             // 
+            // cmbScelta
+            // 
+            cmbScelta.FormattingEnabled = true;
+            cmbScelta.Items.AddRange(new object[] { "Elenco squadre non italiane ordinate per nome", "Elenco piloti Ducati ordinati per cognome e nome", "Elenco circuiti ordinati per nome" });
+            cmbScelta.Location = new Point(360, 27);
+            cmbScelta.Name = "cmbScelta";
+            cmbScelta.Size = new Size(185, 25);
+            cmbScelta.TabIndex = 3;
+            // 
+            // btnStart
+            // 
+            btnStart.Location = new Point(582, 26);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(83, 25);
+            btnStart.TabIndex = 4;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnStart);
+            Controls.Add(cmbScelta);
             Controls.Add(btnGare);
             Controls.Add(btnPiloti);
             Controls.Add(dgvDB);
@@ -83,5 +106,7 @@
         private DataGridView dgvDB;
         private Button btnPiloti;
         private Button btnGare;
+        private ComboBox cmbScelta;
+        private Button btnStart;
     }
 }

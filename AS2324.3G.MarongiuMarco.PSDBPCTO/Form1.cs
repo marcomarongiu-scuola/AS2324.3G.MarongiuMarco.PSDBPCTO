@@ -41,9 +41,6 @@ namespace AS2324._3G.MarongiuMarco.PSDBPCTO
 
         private void btnGare_Click(object sender, EventArgs e)
         {
-            //Un bottone Elenco Gare con l'estrazione in griglia
-            //delle gare andate a podio ordinati per circuito e punteggio
-
             string query = "";
             string strConnessione = "";
             strConnessione = "Data Source=" + @"C:\Users\coent\OneDrive\Documenti\compiti informatica\windows form\AS2324.3G.MarongiuMarco.PSDBPCTO\AS2324.3G.MarongiuMarco.PSDBPCTO\DB\MotoGP.db" + ";Version=3;";
@@ -51,6 +48,41 @@ namespace AS2324._3G.MarongiuMarco.PSDBPCTO
 
             query = "SELECT * FROM Gare WHERE Punteggio >=1 AND Punteggio<=3 ORDER by Circuiti, Punteggio";
 
+
+            SQLiteDataAdapter da = new SQLiteDataAdapter(query, strConnessione);
+
+            try
+            {
+                // riempie il DataTable
+                da.Fill(dtDati);
+
+                // binda la DataGridView
+                dgvDB.DataSource = dtDati;
+            }
+            catch (Exception exe)
+            {
+                MessageBox.Show(exe.Message);
+            }
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            //Elenco squadre non italiane ordinate per nome
+            //Elenco piloti Ducati ordinati per cognome e nome
+            //Elenco circuiti ordinati per nome
+
+            string query = "";
+            string strConnessione = "";
+            strConnessione = "Data Source=" + @"C:\Users\coent\OneDrive\Documenti\compiti informatica\windows form\AS2324.3G.MarongiuMarco.PSDBPCTO\AS2324.3G.MarongiuMarco.PSDBPCTO\DB\MotoGP.db" + ";Version=3;";
+            DataTable dtDati = new DataTable();
+
+            switch (cmbScelta.Text)
+            {
+                case "Elenco squadre non italiane ordinate per nome":
+                    query = "SELECT * FROM Squadre WHERE nazionalita != 'ITA' ORDER by nome";
+                    break;
+
+            }
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(query, strConnessione);
 
