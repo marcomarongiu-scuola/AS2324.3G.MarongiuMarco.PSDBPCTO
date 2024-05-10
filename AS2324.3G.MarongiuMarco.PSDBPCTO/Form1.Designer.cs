@@ -30,6 +30,7 @@
         {
             dgvDB = new DataGridView();
             btnPiloti = new Button();
+            btnGare = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDB).BeginInit();
             SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             btnPiloti.UseVisualStyleBackColor = true;
             btnPiloti.Click += btnPiloti_Click;
             // 
+            // btnGare
+            // 
+            btnGare.Location = new Point(182, 14);
+            btnGare.Name = "btnGare";
+            btnGare.Size = new Size(102, 25);
+            btnGare.TabIndex = 2;
+            btnGare.Text = "Elenco Gare";
+            btnGare.UseVisualStyleBackColor = true;
+            btnGare.Click += btnGare_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGare);
             Controls.Add(btnPiloti);
             Controls.Add(dgvDB);
             Name = "Form1";
@@ -70,5 +82,6 @@
 
         private DataGridView dgvDB;
         private Button btnPiloti;
+        private Button btnGare;
     }
 }
