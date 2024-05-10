@@ -28,34 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvDB = new DataGridView();
+            btnPiloti = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDB).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDB
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 251);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 45;
-            dataGridView1.RowTemplate.Height = 27;
-            dataGridView1.Size = new Size(807, 208);
-            dataGridView1.TabIndex = 0;
+            dgvDB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDB.Location = new Point(-1, 251);
+            dgvDB.Name = "dgvDB";
+            dgvDB.RowHeadersWidth = 45;
+            dgvDB.RowTemplate.Height = 27;
+            dgvDB.Size = new Size(807, 208);
+            dgvDB.TabIndex = 0;
+            // 
+            // btnPiloti
+            // 
+            btnPiloti.Location = new Point(12, 12);
+            btnPiloti.Name = "btnPiloti";
+            btnPiloti.Size = new Size(119, 25);
+            btnPiloti.TabIndex = 1;
+            btnPiloti.Text = "Elenco Piloti";
+            btnPiloti.UseVisualStyleBackColor = true;
+            btnPiloti.Click += btnPiloti_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnPiloti);
+            Controls.Add(dgvDB);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDB).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvDB;
+        private Button btnPiloti;
     }
 }
