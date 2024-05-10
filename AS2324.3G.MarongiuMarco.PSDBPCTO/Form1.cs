@@ -79,9 +79,12 @@ namespace AS2324._3G.MarongiuMarco.PSDBPCTO
             switch (cmbScelta.Text)
             {
                 case "Elenco squadre non italiane ordinate per nome":
-                    query = "SELECT * FROM Squadre WHERE nazionalita != 'ITA' ORDER by nome";
+                    query = "SELECT * FROM Squadre WHERE nazionalita <> 'ITA' ORDER by nome";
                     break;
-
+                case "Elenco piloti Ducati ordinati per cognome e nome":
+                    query = "SELECT * FROM Piloti WHERE Squadre = 'Ducati' ORDER by cognome, nome";
+                    break;
+                
             }
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(query, strConnessione);
